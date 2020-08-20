@@ -9,6 +9,7 @@ const merge = (arr, start, mid, end) => {};
 const mergeSort = (arr, start, end) => {
 	if (start === end) return;
 	const mid = Math.floor((start + end) / 2);
+	mergeSort();
 };
 
 export default mergeSortComplete;
