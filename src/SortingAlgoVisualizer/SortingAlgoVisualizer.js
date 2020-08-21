@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './SortingAlgoVisualizer.css';
+import MergeSort from '../algorithms/mergeSort';
 
 const SortingAlgoVisualizer = (props) => {
 	const [count, setCount] = useState(0);
@@ -21,13 +22,13 @@ const SortingAlgoVisualizer = (props) => {
 		setArray(array);
 	};
 
-	const mergeSort = (params) => {};
+	const mergeSort = () => {};
 
-	const bubbleSort = (params) => {};
+	const bubbleSort = () => {};
 
-	const heapSort = (params) => {};
+	const heapSort = () => {};
 
-	const quickSort = (params) => {};
+	const quickSort = () => {};
 
 	return (
 		<div className='array-container'>
