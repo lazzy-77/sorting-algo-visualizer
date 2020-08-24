@@ -7,7 +7,7 @@ const SortingAlgoVisualizer = (props) => {
 	const [array, setArray] = useState([]);
 	//const [arraySize, setArraySize] = useState(0)
 
-	const arraySize = 450;
+	const arraySize = vw(95) / 4;
 
 	useEffect(() => {
 		resetArray();
@@ -17,7 +17,7 @@ const SortingAlgoVisualizer = (props) => {
 	const resetArray = () => {
 		const array = [];
 		for (let i = 0; i < arraySize; i++) {
-			array.push(randomIntGenerator(5, 800));
+			array.push(randomIntGenerator(5, Math.floor(vh(83))));
 		}
 		setArray(array);
 	};
@@ -59,5 +59,50 @@ const SortingAlgoVisualizer = (props) => {
 const randomIntGenerator = (min, max) => {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
+//Viewport calculators
+
+const vh = (v) => {
+	var h = Math.max(
+		document.documentElement.clientHeight,
+		window.innerHeight || 0
+	);
+	return Math.floor((v * h) / 100);
+};
+
+const vw = (v) => {
+	var w = Math.max(
+		document.documentElement.clientWidth,
+		window.innerWidth || 0
+	);
+	return Math.floor((v * w) / 100);
+};
+
+const vmin = (v) => {
+	return Math.min(vh(v), vw(v));
+};
+
+const vmax = (v) => {
+	return Math.max(vh(v), vw(v));
+};
+
+//Logging values
+
+console.log(
+	vh(20),
+	Math.max(
+		document.documentElement.clientHeight,
+		window.innerHeight || 0
+	)
+);
+console.log(
+	vw(30),
+	Math.max(
+		document.documentElement.clientWidth,
+		window.innerWidth || 0
+	)
+);
+console.log(vmin(20));
+console.log(vmax(20));
 
 export default SortingAlgoVisualizer;

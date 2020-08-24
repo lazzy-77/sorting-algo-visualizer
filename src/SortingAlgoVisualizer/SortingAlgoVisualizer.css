@@ -1,5 +1,11 @@
 .array-container {
-	margin: auto;
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+
+	margin-right: auto;
+	margin-left: auto;
+	bottom: 0;
 }
 
 .array-bar {
@@ -10,10 +16,10 @@
 }
 
 .content {
-	width: 100%;
+	position: relative;
 	height: 85vh;
 	margin: auto;
-	overflow: hidden;
+	width: 100%;
 }
 
 .dashboard {
