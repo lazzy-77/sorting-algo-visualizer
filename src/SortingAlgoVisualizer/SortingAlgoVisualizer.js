@@ -31,19 +31,27 @@ const SortingAlgoVisualizer = (props) => {
 	const quickSort = () => {};
 
 	return (
-		<div className='array-container'>
-			{array.map((value, id) => (
-				<div
-					className='array-bar'
-					key={id}
-					style={{ height: `${value}px` }}
-				></div>
-			))}
-			<button onClick={() => resetArray()}>Generate New Array</button>
-			<button onClick={() => mergeSort()}>Merge Sort</button>
-			<button onClick={() => bubbleSort()}>Bubble Sort</button>
-			<button onClick={() => heapSort()}>Heap Sort</button>
-			<button onClick={() => quickSort()}>Quick Sort</button>
+		<div className='container'>
+			<div className='content'>
+				<div className='array-container'>
+					{array.map((value, id) => (
+						<div
+							className='array-bar'
+							key={id}
+							style={{ height: `${value}px` }}
+						></div>
+					))}
+				</div>
+			</div>
+			<div className='dashboard'>
+				<button onClick={() => resetArray()}>
+					Generate New Array
+				</button>
+				<button onClick={() => mergeSort()}>Merge Sort</button>
+				<button onClick={() => bubbleSort()}>Bubble Sort</button>
+				<button onClick={() => heapSort()}>Heap Sort</button>
+				<button onClick={() => quickSort()}>Quick Sort</button>
+			</div>
 		</div>
 	);
 };
