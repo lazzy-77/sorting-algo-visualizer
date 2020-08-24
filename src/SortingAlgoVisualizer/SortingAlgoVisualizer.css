@@ -1,6 +1,8 @@
 .array-container {
+	width: 100%;
+	height: 75vh;
 	margin: auto;
-	position: absolute;
+	overflow: hidden;
 }
 
 .array-bar {
@@ -8,4 +10,14 @@
 	background-color: pink;
 	display: inline-block;
 	margin: 0 1px;
+}
+
+.dashboard {
+	height: 25vh;
+	background-color: darkmagenta;
+}
+
+.container {
+	background-color: darkgray;
+	height: 100vh;
 }
