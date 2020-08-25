@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://lazzy-77.github.io/sorting-algo-visualizer/
 
 ## Available Scripts
 
