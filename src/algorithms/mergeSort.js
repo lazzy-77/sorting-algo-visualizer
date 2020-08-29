@@ -1,10 +1,10 @@
 //Top-Down mergeSort
 const mergeSortComplete = (array) => {
-	const animation = [];
+	const animations = [];
 	if (array.length <= 1) return array;
 	const copyArray = array.slice();
 	mergeSort(array, 0, array.length - 1, copyArray, animation);
-	return animation;
+	return animations;
 };
 
 const mergeSort = (arr, start, end) => {

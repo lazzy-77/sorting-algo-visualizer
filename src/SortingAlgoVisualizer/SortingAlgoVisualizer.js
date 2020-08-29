@@ -3,6 +3,11 @@ import './SortingAlgoVisualizer.css';
 import MergeSort from '../algorithms/mergeSort';
 
 const SortingAlgoVisualizer = (props) => {
+	//CONSTANTS
+	const ANIMATION_SPEED = 1;
+	const PRIMARY_COLOR = 'blue';
+	const SECONDARY_COLOR = 'red';
+
 	const [count, setCount] = useState(0);
 	const [array, setArray] = useState([]);
 	//const [arraySize, setArraySize] = useState(0)
@@ -22,7 +27,29 @@ const SortingAlgoVisualizer = (props) => {
 		setArray(array);
 	};
 
-	const mergeSort = () => {};
+	const mergeSort = () => {
+		const animations = MergeSort(array);
+		for (let i = 0; i < animations.length; i++) {
+			const arrayBars = document.getElementsByClassName('array-bar');
+			const colorChange = i % 3 !== 2;
+			if (colorChange) {
+				const [firstBarIndex, secondBarIndex] = animations[i];
+				const firstBarStyle = arrayBars[firstBarIndex].style;
+				const secondBarStyle = arrayBars[secondBarIndex].style;
+				const color = i % 3 === 0 ? SECONDARY_COLOR : PRIMARY_COLOR;
+				setTimeout(() => {
+					firstBarStyle.backgroundColor = color;
+					secondBarStyle.backgroundColor = color;
+				}, i * ANIMATION_SPEED);
+			} else {
+				setTimeout(() => {
+					const [firstBarIndex, setNewBarHeight] = animations[i];
+					const firstBarStyle = arrayBars[firstBarIndex].style;
+					firstBarStyle.height = `${setNewBarHeight}px`;
+				}, i * ANIMATION_SPEED);
+			}
+		}
+	};
 
 	const bubbleSort = () => {};
 
@@ -44,9 +71,7 @@ const SortingAlgoVisualizer = (props) => {
 				</div>
 			</div>
 			<div className='dashboard'>
-				<button onClick={() => resetArray()}>
-					Generate New Array
-				</button>
+				<button onClick={() => resetArray()}>New Random Array</button>
 				<button onClick={() => mergeSort()}>Merge Sort</button>
 				<button onClick={() => bubbleSort()}>Bubble Sort</button>
 				<button onClick={() => heapSort()}>Heap Sort</button>
