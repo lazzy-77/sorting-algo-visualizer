@@ -7,12 +7,14 @@ const mergeSortComplete = (array) => {
 	return animations;
 };
 
-const mergeSort = (arr, start, end) => {
+const mergeSort = (arr, start, end, copyArray, animations) => {
 	if (start === end) return;
 	const mid = Math.floor((start + end) / 2);
-	mergeSort();
+	mergeSort(copyArray, start, mid, arr, animations);
+	mergeSort(copyArray, mid + 1, end, arr, animations);
+	merge(arr, start, mid, end, copyArray, animations);
 };
 
-const merge = (arr, start, mid, end) => {};
+const merge = (arr, start, mid, end, copyArray, animations) => {};
 
 export default mergeSortComplete;
