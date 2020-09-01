@@ -27,6 +27,7 @@ const SortingAlgoVisualizer = (props) => {
 		setArray(array);
 	};
 
+	// Method used for animating merge sort algorithm
 	const mergeSort = () => {
 		const animations = MergeSort(array);
 		for (let i = 0; i < animations.length; i++) {

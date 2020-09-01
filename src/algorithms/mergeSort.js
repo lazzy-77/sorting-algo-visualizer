@@ -1,9 +1,9 @@
 //Top-Down mergeSort
-const mergeSortComplete = (array) => {
+const MergeSort = (array) => {
 	const animations = [];
 	if (array.length <= 1) return array;
 	const copyArray = array.slice();
-	mergeSort(array, 0, array.length - 1, copyArray, animation);
+	mergeSort(array, 0, array.length - 1, copyArray, animations);
 	return animations;
 };
 
@@ -24,24 +24,24 @@ const merge = (arr, start, mid, end, copyArray, animations) => {
 		animations.push([a, b]);
 		if (copyArray[a] <= copyArray[b]) {
 			animations.push([x, copyArray[a]]);
-			array[x++] = copyArray[a++];
+			arr[x++] = copyArray[a++];
 		} else {
 			animations.push([x, copyArray[b]]);
-			array[x++] = copyArray[b++];
+			arr[x++] = copyArray[b++];
 		}
 	}
 	while (a <= mid) {
 		animations.push([a, a]);
 		animations.push([a, a]);
 		animations.push([x, copyArray[a]]);
-		array[x++] = copyArray[a++];
+		arr[x++] = copyArray[a++];
 	}
 	while (b <= end) {
 		animations.push([b, b]);
 		animations.push([b, b]);
 		animations.push([x, copyArray[b]]);
-		array[x++] = copyArray[b++];
+		arr[x++] = copyArray[b++];
 	}
 };
 
-export default mergeSortComplete;
+export default MergeSort;
