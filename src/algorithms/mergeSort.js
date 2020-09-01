@@ -24,6 +24,10 @@ const merge = (arr, start, mid, end, copyArray, animations) => {
 		animations.push([a, b]);
 		if (copyArray[a] <= copyArray[b]) {
 			animations.push([x, copyArray[a]]);
+			array[x++] = copyArray[a++];
+		} else {
+			animations.push([x, copyArray[b]]);
+			array[x++] = copyArray[b++];
 		}
 	}
 };
