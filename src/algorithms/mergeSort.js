@@ -30,6 +30,18 @@ const merge = (arr, start, mid, end, copyArray, animations) => {
 			array[x++] = copyArray[b++];
 		}
 	}
+	while (a <= mid) {
+		animations.push([a, a]);
+		animations.push([a, a]);
+		animations.push([x, copyArray[a]]);
+		array[x++] = copyArray[a++];
+	}
+	while (b <= end) {
+		animations.push([b, b]);
+		animations.push([b, b]);
+		animations.push([x, copyArray[b]]);
+		array[x++] = copyArray[b++];
+	}
 };
 
 export default mergeSortComplete;
