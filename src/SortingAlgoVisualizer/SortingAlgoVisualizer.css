@@ -1,33 +1,61 @@
+.container {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 15px;
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 1fr 1fr 1fr 1fr 5fr;
+	grid-template-rows: 7fr 1fr;
+	grid-template-areas:
+		'sorting sorting sorting sorting sorting'
+		'merge bubble heap quick dashboard';
+	grid-gap: 0.5rem;
+	text-align: center;
+	background: #fefefe;
+}
+
 .array-container {
-	position: absolute;
+	box-sizing: border-box;
+	padding: 15px;
 	overflow: hidden;
-	width: 100%;
-
-	margin-right: auto;
-	margin-left: auto;
-	bottom: 0;
-}
-
-.array-bar {
-	width: 2px;
-	background-color: pink;
-	display: inline-block;
-	margin: 0 1px;
-}
-
-.content {
-	position: relative;
-	height: 85vh;
-	margin: auto;
-	width: 100%;
+	background: #a8d0e6;
+	border-radius: 20px;
+	grid-area: sorting;
 }
 
 .dashboard {
-	height: 15vh;
-	background-color: darkmagenta;
+	background: #24305e;
+	border-radius: 20px;
+	grid-area: dashboard;
 }
 
-.container {
-	background-color: darkgray;
-	height: 100vh;
+.merge {
+	background: #f76c6c;
+	border-radius: 20px;
+	grid-area: merge;
+}
+.bubble {
+	background: #f76c6c;
+	border-radius: 20px;
+	grid-area: bubble;
+}
+.heap {
+	background: #f76c6c;
+	border-radius: 20px;
+	grid-area: heap;
+}
+.quick {
+	background: #f76c6c;
+	border-radius: 20px;
+	grid-area: quick;
+}
+
+.array-bar {
+	width: 5px;
+	background-color: #24305e;
+	display: inline-block;
+	margin: 0 1.5px;
 }

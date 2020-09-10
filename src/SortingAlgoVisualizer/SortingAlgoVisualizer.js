@@ -4,15 +4,16 @@ import MergeSort from '../algorithms/mergeSort';
 
 const SortingAlgoVisualizer = (props) => {
 	//CONSTANTS
-	const ANIMATION_SPEED = 1;
-	const PRIMARY_COLOR = 'blue';
-	const SECONDARY_COLOR = 'red';
+	const ANIMATION_SPEED = 5;
+	const PRIMARY_COLOR = '#374785';
+	const SECONDARY_COLOR = '#F8E9A1';
 
 	const [count, setCount] = useState(0);
 	const [array, setArray] = useState([]);
 	//const [arraySize, setArraySize] = useState(0)
 
-	const arraySize = vw(95) / 4;
+	const arraySize = 200;
+	//vw(95) / 4;
 
 	useEffect(() => {
 		resetArray();
@@ -60,23 +61,29 @@ const SortingAlgoVisualizer = (props) => {
 
 	return (
 		<div className='container'>
-			<div className='content'>
-				<div className='array-container'>
-					{array.map((value, id) => (
-						<div
-							className='array-bar'
-							key={id}
-							style={{ height: `${value}px` }}
-						></div>
-					))}
-				</div>
+			<div className='array-container'>
+				{array.map((value, id) => (
+					<div
+						className='array-bar'
+						key={id}
+						style={{ height: `${value}px` }}
+					></div>
+				))}
 			</div>
-			<div className='dashboard'>
+			<div className={'dashboard'}>
 				<button onClick={() => resetArray()}>New Random Array</button>
-				<button onClick={() => mergeSort()}>Merge Sort</button>
-				<button onClick={() => bubbleSort()}>Bubble Sort</button>
+			</div>
+			<div className={'merge'} onClick={() => mergeSort()}>
+				Merge Sort
+			</div>
+			<div className={'heap'}>
 				<button onClick={() => heapSort()}>Heap Sort</button>
+			</div>
+			<div className={'quick'}>
 				<button onClick={() => quickSort()}>Quick Sort</button>
+			</div>
+			<div className={'bubble'}>
+				<button onClick={() => bubbleSort()}>Bubble Sort</button>
 			</div>
 		</div>
 	);
